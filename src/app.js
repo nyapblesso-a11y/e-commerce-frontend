@@ -34,3 +34,10 @@ export async function updateProduct(id, data) {
   });
   return res.json();
 }
+
+export async function deleteProduct(id) {
+ const res = await fetch(`${BASE_URL}/product/${id}`, {
+    method: "DELETE"
+ })
+ return res.json()    
+}
