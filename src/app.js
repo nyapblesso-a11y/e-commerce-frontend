@@ -23,3 +23,14 @@ export async function searchProducts(search, category) {
   const res = await fetch(query);
   return res.json();
 }
+
+
+export async function searchProducts(search, category) {
+  let query = `${BASE_URL}/product?`;
+
+  if (search) query += `search=${encodeURIComponent(search)}&`;
+  if (category) query += `category=${encodeURIComponent(category)}`;
+
+  const res = await fetch(query);
+  return res.json();
+}
