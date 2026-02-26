@@ -2,45 +2,45 @@ import { useState, useEffect } from "react";
 import { createProduct, updateProduct } from "../app";
 
 export default function ProductForm({ selectedProduct, onSuccess }) {
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   description: "",
-  //   price: "",
-  //   category: "",
-  //   image_url: ""
-  // });
+  const [form, setForm] = useState({
+    name: "",
+    description: "",
+    price: "",
+    category: "",
+    image_url: ""
+  });
 
-  // const isEditing = selectedProduct !== null;
+  const isEditing = selectedProduct !== null;
 
-  // useEffect(() => {
-  //   if (selectedProduct) {
-  //     setForm(selectedProduct);
-  //   } else {
-  //     setForm({
-  //     name: "",
-  //     description: "",
-  //     price: "",
-  //     category: "",
-  //     image_url: ""
-  //   });
-  //   }
-  // }, [selectedProduct]);
+  useEffect(() => {
+    if (selectedProduct) {
+      setForm(selectedProduct);
+    } else {
+      setForm({
+      name: "",
+      description: "",
+      price: "",
+      category: "",
+      image_url: ""
+    });
+    }
+  }, [selectedProduct]);
 
-  // const handleChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   if (isEditing) {
-  //     await updateProduct(selectedProduct.id, form);
-  //   } else {
-  //     await createProduct(form);
-  //   }
+    if (isEditing) {
+      await updateProduct(selectedProduct.id, form);
+    } else {
+      await createProduct(form);
+    }
 
-  //   onSuccess();
-  // };
+    onSuccess();
+  };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
