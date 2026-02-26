@@ -42,7 +42,7 @@ export default function ProductList({ onEdit, refresh }) {
         <button onClick={loadProducts}>Reset</button>
       </div>
 
-      {/* {products.map((product) => (
+       {products.map((product) => (
         <div key={product.id} className="card">
           <h3>{product.name}</h3>
           <p>{product.description}</p>
@@ -54,7 +54,7 @@ export default function ProductList({ onEdit, refresh }) {
             <button onClick={() => handleDelete(product.id)}>Delete</button>
           </div>
         </div>
-      ))}  */}
+      ))}  
     </div>
   );
 }
