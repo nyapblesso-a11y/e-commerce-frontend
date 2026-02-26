@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-/*
+
 .form input {
   padding: 8px;
   border: 1px solid #1e293b;
@@ -66,8 +66,8 @@ body {
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 4px;
-}
-
+} 
+/* 
 .card {
   background: white;
   padding: 15px;
@@ -97,4 +97,4 @@ body {
 
 .image:hover {
     cursor: pointer;
-} */
+} */ 
