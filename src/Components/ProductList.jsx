@@ -2,28 +2,28 @@ import { useEffect, useState } from "react";
 import { fetchProducts, deleteProduct, searchProducts } from "../app.js";
 
 export default function ProductList({ onEdit, refresh }) {
-  // const [products, setProducts] = useState([]);
-  // const [search, setSearch] = useState("");
-  // const [category, setCategory] = useState("");
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
 
-  // const loadProducts = async () => {
-  //   const data = await fetchProducts();
-  //   setProducts(data.data);
-  // };
+  const loadProducts = async () => {
+    const data = await fetchProducts();
+    setProducts(data.data);
+  };
 
-  // useEffect(() => {
-  //   loadProducts();
-  // }, [refresh]);
+  useEffect(() => {
+    loadProducts();
+  }, [refresh]);
 
-  // const handleSearch = async () => {
-  //   const data = await searchProducts(search, category);
-  //   setProducts(data.data);
-  // };
+  const handleSearch = async () => {
+    const data = await searchProducts(search, category);
+    setProducts(data.data);
+  };
 
-  // const handleDelete = async (id) => {
-  //   await deleteProduct(id);
-  //   loadProducts();
-  // };
+  const handleDelete = async (id) => {
+    await deleteProduct(id);
+    loadProducts();
+  };
 
   return (
     <div className="list">
